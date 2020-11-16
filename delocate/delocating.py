@@ -241,7 +241,8 @@ def _dylibs_only(filename):
 
 def filter_system_libs(libname):
     return not (libname.startswith('/usr/lib') or
-                libname.startswith('/System'))
+                libname.startswith('/System') or
+                'torch' in libname)
 
 
 def delocate_path(tree_path, lib_path,
